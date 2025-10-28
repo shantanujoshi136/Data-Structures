@@ -8,10 +8,11 @@ struct StringNode{
 };
 struct StringNode*screate(char s[10]){
 	int i;
-	struct StringNode*newNode = (struct StringNode*)malloc(sizeof(struct StringNode*));
-	for(i = 0;i<strlen(s);i++){
-		newNode->str[i] = s[i];
-	}
+	struct StringNode*newNode = (struct StringNode*)malloc(sizeof(struct StringNode));
+	// for(i = 0;i<strlen(s);i++){
+	// 	newNode->str[i] = s[i];
+	// }
+	strcpy(newNode->str,s);
 	newNode->next = NULL;
 	return newNode;
 }
@@ -32,3 +33,4 @@ int main(){
 	shows(head);
 	
 }
+
